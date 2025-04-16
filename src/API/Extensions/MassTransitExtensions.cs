@@ -18,7 +18,8 @@ namespace API.Extensions
             {
                 options.WaitUntilStarted = false;
                 options.StartTimeout = TimeSpan.FromSeconds(10);
-                options.StopTimeout = TimeSpan.FromSeconds(10);
+                options.StopTimeout = TimeSpan.FromSeconds(20);
+                options.ConsumerStopTimeout = TimeSpan.FromSeconds(20);
             });
 
             services.AddMassTransit(busConfigurator =>

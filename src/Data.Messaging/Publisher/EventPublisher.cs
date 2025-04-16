@@ -23,7 +23,7 @@ namespace Data.Messaging.Publisher
         {
             try
             {
-                var cts = new CancellationTokenSource(TimeSpan.FromSeconds(30));
+                var cts = new CancellationTokenSource(TimeSpan.FromSeconds(20));
                 await _publishEndpoint.Publish(message, cts.Token);
             }
             catch (Exception ex)
