@@ -29,6 +29,8 @@ namespace Data.Messaging.Publisher
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error al publicar el mensaje de tipo {EventType}", typeof(T).Name);
+
+                //Fallback
             }
         }
     }
