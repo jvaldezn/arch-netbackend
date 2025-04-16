@@ -13,14 +13,14 @@ namespace API.Extensions
             var mbPassword = configuration.GetValue<string>(Constant.MBPassword) ?? throw new InvalidOperationException();
             var mbRetryCount = Math.Max(configuration.GetValue<int>(Constant.MBRetryCount), 1);
 
-            services.AddOptions<MassTransitHostOptions>()
-            .Configure(options =>
-            {
-                options.WaitUntilStarted = false;
-                options.StartTimeout = TimeSpan.FromSeconds(10);
-                options.StopTimeout = TimeSpan.FromSeconds(20);
-                options.ConsumerStopTimeout = TimeSpan.FromSeconds(20);
-            });
+            //services.AddOptions<MassTransitHostOptions>()
+            //.Configure(options =>
+            //{
+            //    options.WaitUntilStarted = false;
+            //    options.StartTimeout = TimeSpan.FromSeconds(10);
+            //    options.StopTimeout = TimeSpan.FromSeconds(20);
+            //    options.ConsumerStopTimeout = TimeSpan.FromSeconds(20);
+            //});
 
             services.AddMassTransit(busConfigurator =>
             {
